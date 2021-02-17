@@ -1,9 +1,19 @@
 /* #square-container { */
     #dice-container {
-        position: relative;
+        display: flex;
+        flex-wrap: wrap
     }
     
-    .button {
-        position: absolute;
+    .newDie {
+        display: flex;
+        align-items: center;
+        width: 100px;
+        height: 100px;
         cursor: pointer;
+        border: 1px solid black;
+        margin: 4px
     }
+
+  
+
+
