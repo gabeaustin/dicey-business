@@ -2,7 +2,7 @@ let container = document.getElementById("dice-container");
 let generateDieBtn = document.getElementById("generate-die-btn");
 let rollDiceBtn = document.getElementById("roll-dice-btn");
 let sumDiceBtn = document.getElementById("sum-dice-btn");
-let diceArray = []; // WORK ON THIS NEXT
+let diceArray = [];
 
 class Die {
     constructor(value) {
@@ -12,7 +12,6 @@ class Die {
         this.roll();
         this.div.innerText = this.value;
         container.appendChild(this.div);
-        // this.div.classList.add("rollDice";)
         this.div.addEventListener("dblclick", function () {
             this.div.remove();
         }.bind(this));
@@ -27,7 +26,7 @@ class Die {
 
 generateDieBtn.addEventListener("click", function(){
     let newDieClass = new Die();
-    diceArray.push(newDieClass); // WORK ON THIS NEXT
+    diceArray.push(newDieClass);
 });
 
 rollDiceBtn.addEventListener("click", function () {
@@ -40,7 +39,7 @@ rollDiceBtn.addEventListener("click", function () {
 sumDiceBtn.addEventListener("click", function() {
     let total = 0;
     for (let i = 0; i < diceArray.length; i++){
-        total+=diceArray[i].value;
+        total += diceArray[i].value;
     }
     alert(`The sum of all the dice: ${total}`);
 })
