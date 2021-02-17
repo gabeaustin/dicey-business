@@ -1,7 +1,7 @@
 let container = document.getElementById("dice-container");
-let myVal = document.getElementById("dice-container");
 let generateDieBtn = document.getElementById("generate-die-btn");
 let rollDiceBtn = document.getElementById("roll-dice-btn");
+let sumDiceBtn = document.getElementById("sum-dice-btn");
 let diceArray = []; // WORK ON THIS NEXT
 
 class Die {
@@ -11,15 +11,13 @@ class Die {
         this.div.classList.add("newDie");
         this.roll();
         this.div.innerText = this.value;
-        // below is how you call another method from inside a constructor
         container.appendChild(this.div);
-        diceArray.push(this); // WORK ON THIS NEXT
         // this.div.classList.add("rollDice";)
-        this.div.addEventListener("dblclick", function() {
+        this.div.addEventListener("dblclick", function () {
             this.div.remove();
         }.bind(this));
     }
-    
+
     roll() {
         let randomValue = Math.floor(Math.random() * 6) + 1;
         this.value = randomValue;
@@ -27,17 +25,27 @@ class Die {
     }
 }
 
-// This code will generate a new div each time the button is clicked
-generateDieBtn.addEventListener("click", createDiv);
-rollDiceBtn.addEventListener("dblclick", updateDiv);
+generateDieBtn.addEventListener("click", function(){
+    let newDieClass = new Die();
+    diceArray.push(newDieClass); // WORK ON THIS NEXT
+    // console.log(newDieClass.value); // THIS IS HOW I WILL GET THE VALUE
+});
 
-function createDiv() {
-    new Die();
-    // console.log(this.value); 
-};
+document.getElementById("roll-dice-btn").addEventListener("click", function () {
+    for (let i = 0; i < diceArray.length; i++) {
+        diceArray[i].value = diceArray[i].roll;
+        console.log(diceArray[i]);
+        diceArray[i].div.innerText = diceArray[i].value;
+    }
+});
 
-function updateDiv() {
-    new Die();
-};
+sumDiceBtn.addEventListener("click", function() {
+    let total = 0;
+    for (let i = 0; i < diceArray.length; i++){
+        total+=diceArray[i].value;
+    }
+    alert(`The sum of all the dice: ${total}`);
+})
+
 
 
