@@ -1,7 +1,7 @@
-let minRollValue = 1;
-let maxRollValue = 6;
-let dieCount = 4;
-let diceArray = []
+// let minRollValue = 1;
+// let maxRollValue = 6;
+// let dieCount = 4;
+let diceArray = []; // next to work on
 let generateDieBtn = document.getElementById("generate-die-btn");
 let container = document.getElementById("dice-container");
 
@@ -10,7 +10,7 @@ class Die {
         this.value = value;
         this.div = document.createElement("div");
         this.div.classList.add("newDie");
-        this.roll(); // will change
+        this.roll();
         this.div.innerText = this.value;
         // below is how you call another method from inside a constructor
         container.appendChild(this.div);
@@ -28,7 +28,6 @@ class Die {
 
 // This code will generate a new div each time the button is clicked
 generateDieBtn.addEventListener("click", createDiv);
-
 
 // puts divs in a grid
 function createDiv() {
