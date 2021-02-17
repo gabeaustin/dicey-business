@@ -28,13 +28,11 @@ class Die {
 generateDieBtn.addEventListener("click", function(){
     let newDieClass = new Die();
     diceArray.push(newDieClass); // WORK ON THIS NEXT
-    // console.log(newDieClass.value); // THIS IS HOW I WILL GET THE VALUE
 });
 
-document.getElementById("roll-dice-btn").addEventListener("click", function () {
+rollDiceBtn.addEventListener("click", function () {
     for (let i = 0; i < diceArray.length; i++) {
         diceArray[i].value = diceArray[i].roll;
-        console.log(diceArray[i]);
         diceArray[i].div.innerText = diceArray[i].value;
     }
 });
