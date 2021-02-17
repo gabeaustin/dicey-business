@@ -1,6 +1,8 @@
 # Dicey Business
 ## Covalence
 
+## [**Lab Demo**](https://www.youtube.com/watch?v=VXLQTh0WeBw)
+
 This lab will combine principles of HTML, CSS, JavaScript, Accessing/Creating/Modifying HTML elements, and Object Oriented Programming.
 
 **General Requirements**

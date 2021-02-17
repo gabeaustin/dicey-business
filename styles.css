@@ -1,0 +1,9 @@
+/* #square-container { */
+    #dice-container {
+        position: relative;
+    }
+    
+    .button {
+        position: absolute;
+        cursor: pointer;
+    }
